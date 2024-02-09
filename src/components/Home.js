@@ -16,7 +16,7 @@ function Home() {
         backgroundPosition: 'center',
       }}
     >
-      <Typography variant="h2" color="white" style={{ margin: '0 50% 0 0', padding: '10%'}}>Welcome to HorrizonAI</Typography>
+      <Typography variant="h2" color="white" style={{ margin: '0 50% 0 0', padding: '10%'}}>Welcome to SomethingAI</Typography>
     </Box>
   );
 }

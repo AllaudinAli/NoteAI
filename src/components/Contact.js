@@ -15,13 +15,13 @@ function Contact() {
             Contact Us
           </Typography>
           <Typography variant="body1" gutterBottom>
-            HorrizonAI Inc.
+            SomethingAI,
             <br />
-            95 Main Revenue Road,
+            Blah Blah Blah,
             <br />
-            Block A Revenue Society,
+            UMT,
             <br />
-            Block D 1 Block A Johar Town
+            Lahore, Pakistan
             <br />
             Lahore, Pakistan
             <br />

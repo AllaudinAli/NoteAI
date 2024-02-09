@@ -11,7 +11,7 @@ function About() {
           </Typography>
           <Typography variant="body1" gutterBottom>
             Here you can add your "About Us" content. Describe the mission, vision,
-            and values of HorrizonAI. You might also include information about the
+            and values of SomethingAI. You might also include information about the
             team, history of the project, or any other relevant information that you
             believe will engage your visitors.
           </Typography>
