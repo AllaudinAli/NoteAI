@@ -5,32 +5,33 @@ const serviceData = [
   {
     title: 'Business Intelligence and Data Analytics',
     description: 'Data Scrapping and Running ETL Processes, Data Analytics to Provide Valuable Business Insights',
-    imageUrl: 'logo512.png', // Replace with your image path
+    imageUrl: 'service1.png', // Replace with your image path
   },
   {
     title: 'Enterprise Machine Learning Solutions',
     description: 'Build POCs to demonstrate the applicability of ML for business problems, Train ML models to support data-driven business operations.',
-    imageUrl: 'logo512.png',
+    imageUrl: 'service2.png',
   },
   {
     title: 'LLM Based Business Applications',
     description: 'Text generation and keyword mapping for search applications, Chatbots and Recommendation bots for E-commerce platforms.',
-    imageUrl: 'logo512.png',
+    imageUrl: 'service3_2.png',
   },
   {
     title: 'LLM Based Business Applications',
     description: 'Text generation and keyword mapping for search applications, Chatbots and Recommendation bots for E-commerce platforms.',
-    imageUrl: 'logo512.png',
+    imageUrl: 'service4_2.png',
   }
   // Add more items as needed
 ];
 
 function Services() {
   return (
-    <Box sx={{ flexGrow: 1, padding: 15 }}>
+    <Box sx={{ flexGrow: 1, margin: "15%"}}>
       <Typography variant="h3" component="h2" align="center" gutterBottom>
         Our Services
       </Typography>
+      <br/><br/><br/>
       <Grid container spacing={10} justifyContent="center">
         {serviceData.map((service, index) => (
           <Grid item key={index} xs={12} sm={6} md={3}>

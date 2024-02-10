@@ -1,23 +1,59 @@
-import React from 'react';
-import Box from '@mui/material/Box';
-import { Typography } from '@mui/material';
-
+import React from "react";
+import Box from "@mui/material/Box";
+import { Typography, Grid } from "@mui/material";
+import BasicButtons from "./Button";
 function Home() {
   return (
-    <Box
-      sx={{
-        width: '100vw',
-        height: 'calc(100vh - 64px)', // Adjust based on your navbar's height
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundImage: 'url("home.jpg")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      <Typography variant="h2" color="white" style={{ margin: '0 50% 0 0', padding: '10%'}}>Welcome to SomethingAI</Typography>
-    </Box>
+    <>
+      <Box
+        sx={{
+          width: "100vw",
+          height: "auto",
+          backgroundImage: 'url("home1.jpg")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          paddingTop: "4px",
+        }}
+      >
+        <Grid container spacing={2}>
+          <Grid item xs={10} md={5}>
+            <Box>
+              <Typography
+                variant="h2"
+                color="white"
+                style={{ margin: "20% 0% 60% 10%", padding: "15%" }}
+              >
+                Automate your meeting notes
+                <Typography
+                  variant="h6"
+                  color="#cccfcd"
+                  styles={{ padding: "10%" }}
+                >
+                  <br />
+                  SomethingAI is an AI-powered tool that helps you to automate
+                  and summarize your meeting notes
+                </Typography>
+                <br />
+                <BasicButtons />
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid item xs={10} md={5}>
+          <img
+            src="home2.png" // Replace with the path to your image
+            alt="About Us"
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+              borderRadius: "12px",
+              margin: "20% 0% 0% 40%",
+            }}
+          />
+          </Grid>
+        </Grid>
+      </Box>
+    </>
   );
 }
 
