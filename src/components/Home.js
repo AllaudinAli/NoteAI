@@ -2,7 +2,6 @@ import React from "react";
 import Box from "@mui/material/Box";
 import { Typography, Grid } from "@mui/material";
 import BasicButtons from "./Button";
-import { BrowserRouter as Link } from "react-router-dom";
 function Home() {
   return (
     <>
