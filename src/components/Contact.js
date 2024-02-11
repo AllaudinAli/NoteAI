@@ -3,7 +3,7 @@ import { Box, Grid, Typography, Link } from "@mui/material";
 
 function Contact() {
   return (
-    <Box sx={{ flexGrow: 1, height: "50vh" }}>
+    <Box sx={{ flexGrow: 1, height: "auto" }}>
       <Grid container spacing={0}>
         <Grid
           item

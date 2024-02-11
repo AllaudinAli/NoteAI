@@ -1,56 +1,75 @@
-import React from 'react';
-import { Box, Card, CardContent, Typography, Grid, CardMedia } from '@mui/material';
+import React from "react";
+import { Box, Typography, Grid } from "@mui/material";
+import { experimentalStyled as styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
 
 const serviceData = [
   {
-    title: 'Business Intelligence and Data Analytics',
-    description: 'Data Scrapping and Running ETL Processes, Data Analytics to Provide Valuable Business Insights',
-    imageUrl: 'service1.png', // Replace with your image path
+    title: "Business Intelligence and Data Analytics",
+    description:
+      "Data Scrapping and Running ETL Processes, Data Analytics to Provide Valuable Business Insights",
+    imageUrl: "service1.png", // Replace with your image path
   },
   {
-    title: 'Enterprise Machine Learning Solutions',
-    description: 'Build POCs to demonstrate the applicability of ML for business problems, Train ML models to support data-driven business operations.',
-    imageUrl: 'service2.png',
+    title: "Enterprise Machine Learning Solutions",
+    description:
+      "Build POCs to demonstrate the applicability of ML for business problems, Train ML models to support data-driven business operations.",
+    imageUrl: "service2.png",
   },
   {
-    title: 'LLM Based Business Applications',
-    description: 'Text generation and keyword mapping for search applications, Chatbots and Recommendation bots for E-commerce platforms.',
-    imageUrl: 'service3_2.png',
+    title: "LLM Based Business Applications",
+    description:
+      "Text generation and keyword mapping for search applications, Chatbots and Recommendation bots for E-commerce platforms.",
+    imageUrl: "service3_2.png",
   },
   {
-    title: 'LLM Based Business Applications',
-    description: 'Text generation and keyword mapping for search applications, Chatbots and Recommendation bots for E-commerce platforms.',
-    imageUrl: 'service4_2.png',
-  }
+    title: "LLM Based Business Applications",
+    description:
+      "Text generation and keyword mapping for search applications, Chatbots and Recommendation bots for E-commerce platforms.",
+    imageUrl: "service4_2.png",
+  },
   // Add more items as needed
 ];
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(2),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
 
 function Services() {
   return (
-    <Box sx={{ flexGrow: 1, margin: "15%"}}>
+    <Box sx={{ flexGrow: 1, margin: "10%" }}>
       <Typography variant="h3" component="h2" align="center" gutterBottom>
         Our Services
       </Typography>
-      <br/><br/><br/>
-      <Grid container spacing={10} justifyContent="center">
+      <br/><br/><br/><br/><br/>
+      <Grid
+        container
+        spacing={{ xs: 10, md: 10 }}
+        columns={{ xs: 2, sm: 8, md: 12, lg: 4 }}
+      >
         {serviceData.map((service, index) => (
-          <Grid item key={index} xs={12} sm={6} md={3}>
-            <Card sx={{ textAlign: 'center', backgroundColor: 'white', boxShadow: 0 }}>
-              <CardMedia
-                component="img"
-                image={service.imageUrl}
-                alt={service.title}
-                sx={{ width: '100%', height: 'auto', borderRadius: '50%' }}
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {service.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {service.description}
-                </Typography>
-              </CardContent>
-            </Card>
+          <Grid item xs={2} sm={4} md={6} lg={1} key={index}>
+            <Paper
+              elevation={3} // Adjust the elevation as needed
+              sx={{
+                padding: 2,
+                textAlign: "center",
+                borderRadius: "50%", // This will make the Paper round
+                overflow: "hidden", // This will hide anything that goes outside the border radius
+                backgroundImage: `url(${service.imageUrl})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                height: 0,
+                paddingBottom: "100%", // This maintains the aspect ratio of the Paper
+              }}
+            /><br/><br/>
+            <Typography variant="h6" gutterBottom component="div">
+              {service.title}
+            </Typography>
+            <Typography variant="body2">{service.description}</Typography>
           </Grid>
         ))}
       </Grid>

@@ -6,7 +6,6 @@ function About() {
     <Box
       sx={{
         width: "100vw",
-        height: "50vh", // Adjust based on your navbar's height if it's different than 64px
         display: "flex",
         flexGrow: 1,
         padding: "20px",
