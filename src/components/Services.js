@@ -34,7 +34,7 @@ const serviceData = [
 function Services() {
   return (
     <Box sx={{ flexGrow: 1, margin: "10%" }}>
-      <Typography variant="h3" component="h2" align="center" gutterBottom>
+      <Typography variant="h3" component="h2" align="center" color="teal" gutterBottom>
         Our Services
       </Typography>
       <br/><br/><br/><br/><br/>
@@ -50,19 +50,19 @@ function Services() {
               sx={{
                 padding: 2,
                 textAlign: "center",
-                borderRadius: "50%", // This will make the Paper round
+                borderRadius: "50%", 
                 overflow: "hidden",
                 backgroundImage: `url(${service.imageUrl})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 height: 0,
-                paddingBottom: "100%", // This maintains the aspect ratio of the Paper
+                paddingBottom: "100%", 
               }}
             /><br/><br/>
-            <Typography variant="h6" gutterBottom component="div">
+            <Typography variant="h6" textAlign={'center'} gutterBottom component="div" >
               {service.title}
             </Typography>
-            <Typography variant="body2">{service.description}</Typography>
+            <Typography variant="body1" textAlign={'center'} color={"#77787d"}>{service.description}</Typography>
           </Grid>
         ))}
       </Grid>

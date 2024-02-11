@@ -48,7 +48,7 @@ function ResponsiveAppBar() {
     <AppBar
       position="fixed"
       sx={{
-        backgroundColor: '#001b30',
+        backgroundColor: "#001b30",
         boxShadow: "none",
       }}
     >
@@ -67,6 +67,7 @@ function ResponsiveAppBar() {
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              margin: "0 20% 0 0",
             }}
           >
             SomethingAI

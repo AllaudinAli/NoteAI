@@ -2,6 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import { Typography, Grid } from "@mui/material";
 import BasicButtons from "./Button";
+import { BrowserRouter as Link } from "react-router-dom";
 function Home() {
   return (
     <>
@@ -40,16 +41,15 @@ function Home() {
             </Box>
           </Grid>
           <Grid item xs={10} md={5}>
-          <img
-            src="home2.png" // Replace with the path to your image
-            alt="About Us"
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-              borderRadius: "12px",
-              margin: "20% 0% 0% 40%",
-            }}
-          />
+            <img
+              src="home2.png" // Replace with the path to your image
+              alt="About Us"
+              style={{
+                maxWidth: "100%",
+                borderRadius: "12px",
+                margin: "20% 0% 0% 40%",
+              }}
+            />
           </Grid>
         </Grid>
       </Box>
