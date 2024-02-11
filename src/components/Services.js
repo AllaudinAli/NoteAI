@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Typography, Grid } from "@mui/material";
-import { experimentalStyled as styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 
 const serviceData = [
@@ -30,13 +29,7 @@ const serviceData = [
   },
   // Add more items as needed
 ];
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
+
 
 function Services() {
   return (
@@ -53,12 +46,12 @@ function Services() {
         {serviceData.map((service, index) => (
           <Grid item xs={2} sm={4} md={6} lg={1} key={index}>
             <Paper
-              elevation={3} // Adjust the elevation as needed
+              elevation={3} 
               sx={{
                 padding: 2,
                 textAlign: "center",
                 borderRadius: "50%", // This will make the Paper round
-                overflow: "hidden", // This will hide anything that goes outside the border radius
+                overflow: "hidden",
                 backgroundImage: `url(${service.imageUrl})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
