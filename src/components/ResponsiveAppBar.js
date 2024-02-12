@@ -70,7 +70,7 @@ function ResponsiveAppBar() {
               margin: "0 20% 0 0",
             }}
           >
-            SomethingAI
+            NoteAI
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>

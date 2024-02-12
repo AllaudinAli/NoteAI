@@ -4,40 +4,34 @@ import Paper from "@mui/material/Paper";
 
 const serviceData = [
   {
-    title: "Business Intelligence and Data Analytics",
+    title: "Module Transcription",
     description:
-      "Data Scrapping and Running ETL Processes, Data Analytics to Provide Valuable Business Insights",
-    imageUrl: "service1.png", // Replace with your image path
+      "This module focuses on the conversion of spoken words into text, ensuring an accurate representation of the meeting's content.",
+    imageUrl: "service1.png",
   },
   {
-    title: "Enterprise Machine Learning Solutions",
+    title: "Module Text Summarization",
     description:
-      "Build POCs to demonstrate the applicability of ML for business problems, Train ML models to support data-driven business operations.",
+      "Using advanced language models, this module synthesizes comprehensive summaries of the meeting content, capturing key discussions and decisions. ",
     imageUrl: "service2.png",
   },
   {
-    title: "LLM Based Business Applications",
+    title: "Module Output",
     description:
-      "Text generation and keyword mapping for search applications, Chatbots and Recommendation bots for E-commerce platforms.",
+      "This module generates the final meeting minutes in multiple formats, including bullet points, flowcharts, and detailed reports.",
     imageUrl: "service3_2.png",
   },
   {
-    title: "LLM Based Business Applications",
+    title: "Module ChatBot",
     description:
-      "Text generation and keyword mapping for search applications, Chatbots and Recommendation bots for E-commerce platforms.",
+      "Respond to any queries or requests made by users in real-time about the summary content",
     imageUrl: "service4_2.png",
   },
-  // Add more items as needed
 ];
-
 
 function Services() {
   return (
-    <Box sx={{ flexGrow: 1, margin: "10%" }}>
-      <Typography variant="h3" component="h2" align="center" color="teal" gutterBottom>
-        Our Services
-      </Typography>
-      <br/><br/><br/><br/><br/>
+    <Box sx={{ flexGrow: 1, margin: "0% 10% 10% 10%" }}>
       <Grid
         container
         spacing={{ xs: 10, md: 10 }}
@@ -46,23 +40,32 @@ function Services() {
         {serviceData.map((service, index) => (
           <Grid item xs={2} sm={4} md={6} lg={1} key={index}>
             <Paper
-              elevation={3} 
+              elevation={3}
               sx={{
                 padding: 2,
                 textAlign: "center",
-                borderRadius: "50%", 
+                borderRadius: "50%",
                 overflow: "hidden",
                 backgroundImage: `url(${service.imageUrl})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 height: 0,
-                paddingBottom: "100%", 
+                paddingBottom: "100%",
               }}
-            /><br/><br/>
-            <Typography variant="h6" textAlign={'center'} gutterBottom component="div" >
+            />
+            <br />
+            <br />
+            <Typography
+              variant="h6"
+              textAlign={"center"}
+              gutterBottom
+              component="div"
+            >
               {service.title}
             </Typography>
-            <Typography variant="body1" textAlign={'center'} color={"#77787d"}>{service.description}</Typography>
+            <Typography variant="body1" textAlign={"center"} color={"#77787d"}>
+              {service.description}
+            </Typography>
           </Grid>
         ))}
       </Grid>
