@@ -17,13 +17,11 @@ function Contact() {
           <Typography variant="body1" gutterBottom>
             NoteAI,
             <br />
-            UMT,
+            University of Management and Technology C-II, Johar Town
             <br />
             Lahore, Pakistan
             <br />
-            Lahore, Pakistan
-            <br />
-            Phone: +123 456 7890
+            Phone: +92 348 4331435
           </Typography>
           <Link href="mailto:contact@horrizonai.example.com" variant="body1">
             Send us an email
