@@ -31,7 +31,7 @@ function Home() {
                   styles={{ padding: "10%" }}
                 >
                   <br />
-                  SomethingAI is an AI-powered tool that helps you to automate
+                  NoteAI is an AI-powered tool that helps you to automate
                   and summarize your meeting notes
                 </Typography>
                 <br />
