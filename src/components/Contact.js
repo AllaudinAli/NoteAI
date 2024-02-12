@@ -15,9 +15,7 @@ function Contact() {
             Contact Us
           </Typography>
           <Typography variant="body1" gutterBottom>
-            SomethingAI,
-            <br />
-            Blah Blah Blah,
+            NoteAI,
             <br />
             UMT,
             <br />
