@@ -7,7 +7,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Methodology from "./pages/Methodology";
-import Contact from "./components/Contact";
 import MeetingSummarizer from "./pages/MeetingSummarizer"; // Make sure to create this component
 import SummaryPage from "./pages/summary";
 import { Box } from "@mui/material";

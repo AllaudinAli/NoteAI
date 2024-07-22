@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Typography, Grid } from "@mui/material";
 import Paper from "@mui/material/Paper";
-import { Margin } from "@mui/icons-material";
 
 const serviceData = [
   {
