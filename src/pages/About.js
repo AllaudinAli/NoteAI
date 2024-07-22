@@ -9,6 +9,7 @@ function About() {
         display: "flex",
         flexGrow: 1,
         padding: "20px",
+        bgcolor: "#0D0D0D",
       }}
     >
       <Grid
@@ -24,7 +25,7 @@ function About() {
           </Typography>
           <br />
           <br />
-          <Typography variant="h6" gutterBottom color={"#77787d"}>
+          <Typography variant="h6" gutterBottom color={"white"}>
             In today's fast-paced business landscape, efficient documentation
             and dissemination of meeting outcomes are paramount. This project
             introduces an innovative approach to streamline this process through
@@ -38,27 +39,14 @@ function About() {
         </Grid>
         <Grid item xs={10} md={5}>
           <img
-            src="about1.png" // Replace with the path to your image
+            src="about_img.jpg" // Replace with the path to your image
             alt="About Us"
             style={{
               maxWidth: "100%",
               height: "auto",
-              borderRadius: "12px", // Optional: if you want rounded corners
+              borderRadius: "50%", // Optional: if you want rounded corners
             }}
           />
-        </Grid>
-        <Grid item xs={10} md={10}>
-          <img
-            src="flowchart1.png"
-            alt="Flowchart"
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-              borderRadius: "12px",
-            }}
-          />
-        </Grid>
-        <Grid item xs={10} md={5}>
         </Grid>
       </Grid>
     </Box>

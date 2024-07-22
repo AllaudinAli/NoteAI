@@ -1,17 +1,8 @@
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 
-const TranscriptionBox = ({ onTranscriptionSubmit }) => {
-  const [transcription, setTranscription] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onTranscriptionSubmit(transcription);
-    setTranscription('');
-  };
-
+const TranscriptionBox = ({ transcription, setTranscription }) => {
   return (
     <Box
       component="form"
@@ -20,7 +11,6 @@ const TranscriptionBox = ({ onTranscriptionSubmit }) => {
       }}
       noValidate
       autoComplete="off"
-      onSubmit={handleSubmit}
     >
       <TextField
         fullWidth
@@ -30,8 +20,30 @@ const TranscriptionBox = ({ onTranscriptionSubmit }) => {
         variant="outlined"
         value={transcription}
         onChange={(e) => setTranscription(e.target.value)}
+        InputLabelProps={{
+          style: { color: '#fff' } // Changes label text to white
+        }}
+        InputProps={{
+          style: { color: '#fff' }, // Changes input text to white
+        }}
+        sx={{
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          '& label.Mui-focused': {
+            color: 'white',
+          },
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              borderColor: 'white',
+            },
+            '&:hover fieldset': {
+              borderColor: 'white',
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: 'white',
+            },
+          },
+        }}
       />
-      <Button variant="contained" type="submit">Submit</Button>
     </Box>
   );
 };

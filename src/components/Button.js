@@ -17,7 +17,8 @@ export default function BasicButtons() {
         backgroundColor: "#2a356b",
         padding: "3% 7% 3% 7%",
         '&:hover': {
-          backgroundColor: "#2a356b", // Add this to maintain background color even on hover
+          backgroundColor: "#18032E",
+          boxShadow: "20" // Add this to maintain background color even on hover
         },
       }}
       variant="contained"

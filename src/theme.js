@@ -16,11 +16,17 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    h2: {
+      fontWeight: 100,
+    },
+    h1: {
+      fontWeight: 1000,
+    },
     h4: {
-      fontWeight: 600,
+      fontWeight: 100,
     },
     h5: {
-      fontWeight: 500,
+      fontWeight: 100,
     },
     body1: {
       fontSize: "1rem",
