@@ -15,7 +15,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 const pages = [
   { title: "Home", path: "/#home" },
   { title: "About us", path: "/#about-us" },
-  { title: "Services", path: "/#services" },
+  // { title: "Services", path: "/#services" },
 ];
 
 function ResponsiveAppBar() {

@@ -1,6 +1,7 @@
 /* global.css or index.css */
 html,
 body {
+  background-color: #F5F3FF;
   margin: 0;
   padding: 0;
   width: 100%;

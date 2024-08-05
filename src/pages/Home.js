@@ -1,24 +1,28 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import { Typography, Grid } from "@mui/material";
+import { Typography, Grid, useMediaQuery, useTheme } from "@mui/material";
 import BasicButtons from "../components/Button";
+
 function Home() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
     <>
       <Box
         sx={{
           width: "100vw",
-          minHeight: "100vh", // Ensures at least full viewport height coverage
-          height: "auto", // Adjusts based on content size
+          minHeight: "100vh",
+          height: "auto",
           backgroundImage: 'url("home.jpg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundRepeat: "no-repeat", // Prevents the image from repeating
+          backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
           pt: 5,
         }}
       >
-        <Grid container spacing={4} justifyContent="center">
+        <Grid container spacing={5} justifyContent="center">
           <Grid item xs={12} md={6}>
             <Typography variant="h2" color="white" style={{ padding: "25%" }}>
               Automate your meeting notes
@@ -31,17 +35,19 @@ function Home() {
               <BasicButtons />
             </Typography>
           </Grid>
-          <Grid item xs={12} md={6}>
-            {/* <img
-              src=""
-              alt="Flowchart"
-              style={{
-                maxWidth: "50%",
-                height: "auto",
-                margin: "0 0 0 0",
-              }}
-            /> */}
-          </Grid>
+          {!isMobile && (
+            <Grid item xs={12} md={6}>
+              <img
+                src="/Header_Image.png"
+                alt=""
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  margin: "15% 0 0 0",
+                }}
+              />
+            </Grid>
+          )}
         </Grid>
       </Box>
     </>
