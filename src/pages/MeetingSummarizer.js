@@ -21,6 +21,7 @@ function MeetingSummarizer() {
   const navigate = useNavigate();
   const [inputType, setInputType] = useState("");
   const [content, setContent] = useState(""); // State to hold the content
+  const [link, setLink] = useState(""); // State to hold the YouTube link or URL
 
   const handleSubmission = (data) => {
     setContent(data); // Update the content state
@@ -28,7 +29,7 @@ function MeetingSummarizer() {
   };
 
   const renderInputComponent = () => {
-    const commonProps = { onSubmit: handleSubmission };
+    const commonProps = { onSubmit: handleSubmission, link, setLink };
     switch (inputType) {
       case "link":
         return <InputBox {...commonProps} />;
