@@ -20,50 +20,34 @@ import NotesIcon from "@mui/icons-material/Notes";
 function MeetingSummarizer() {
   const navigate = useNavigate();
   const [inputType, setInputType] = useState("");
-  // const [content, setContent] = useState(""); // State to hold the content
   const [link, setLink] = useState(""); // State to hold the YouTube link or URL
-
-  // const fetchSummary = async (videoUrl) => {
-  //   try {
-  //     const response = await fetch("http://127.0.0.1:8000/summarize", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         "server": "unicorn"
-  //       },
-  //       body: JSON.stringify({ video_url: videoUrl }),
-  //     });
-  //     if (response.ok) {
-  //       const data = await response.json();
-  //       setContent(data.summary); // Assuming the response has a 'summary' field
-  //       navigate("/summary", { state: { content: data.summary } });
-  //     } else {
-  //       console.error("Failed to fetch summary:", response.status);
-  //       // Handle errors or display a message
-  //     }
-  //   } catch (error) {
-  //     console.error("Error fetching summary:", error);
-  //     // Handle errors or display a message
-  //   }
-  // };
+  const [transcription, setTranscription] = useState(""); // State to hold the transcription text
 
   const handleSubmission = () => {
     if (inputType === "link" && link) {
       navigate("/summary", { state: { videoUrl: link } });
+    } else if (inputType === "transcript" && transcription) {
+      navigate("/summary", { state: { content: transcription } });
     } else {
       // Handle other input types or show an error
     }
   };
 
   const renderInputComponent = () => {
-    const commonProps = { onSubmit: handleSubmission, link, setLink };
     switch (inputType) {
       case "link":
-        return <InputBox {...commonProps} />;
+        return (
+          <InputBox onSubmit={handleSubmission} link={link} setLink={setLink} />
+        );
       case "file":
-        return <DropBox {...commonProps} />;
+        return <DropBox onSubmit={handleSubmission} />;
       case "transcript":
-        return <TranscriptionBox {...commonProps} />;
+        return (
+          <TranscriptionBox
+            transcription={transcription}
+            setTranscription={setTranscription}
+          />
+        );
       default:
         return null;
     }
@@ -163,7 +147,7 @@ function MeetingSummarizer() {
               variant="contained"
               color="primary"
               sx={{ mt: 2 }}
-              onClick={() => handleSubmission()}
+              onClick={handleSubmission}
             >
               Next
             </Button>
