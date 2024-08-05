@@ -20,12 +20,39 @@ import NotesIcon from "@mui/icons-material/Notes";
 function MeetingSummarizer() {
   const navigate = useNavigate();
   const [inputType, setInputType] = useState("");
-  const [content, setContent] = useState(""); // State to hold the content
+  // const [content, setContent] = useState(""); // State to hold the content
   const [link, setLink] = useState(""); // State to hold the YouTube link or URL
 
-  const handleSubmission = (data) => {
-    setContent(data); // Update the content state
-    navigate("/summary", { state: { content: data } }); // Pass content via route state
+  // const fetchSummary = async (videoUrl) => {
+  //   try {
+  //     const response = await fetch("http://127.0.0.1:8000/summarize", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         "server": "unicorn"
+  //       },
+  //       body: JSON.stringify({ video_url: videoUrl }),
+  //     });
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       setContent(data.summary); // Assuming the response has a 'summary' field
+  //       navigate("/summary", { state: { content: data.summary } });
+  //     } else {
+  //       console.error("Failed to fetch summary:", response.status);
+  //       // Handle errors or display a message
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching summary:", error);
+  //     // Handle errors or display a message
+  //   }
+  // };
+
+  const handleSubmission = () => {
+    if (inputType === "link" && link) {
+      navigate("/summary", { state: { videoUrl: link } });
+    } else {
+      // Handle other input types or show an error
+    }
   };
 
   const renderInputComponent = () => {
@@ -72,9 +99,31 @@ function MeetingSummarizer() {
         {!inputType && (
           <Grid container spacing={2} justifyContent="center">
             {[
-              { icon: <YouTubeIcon sx={{ fontSize: { xs: 40, md: 60 } }} />, title: "YouTube Link", type: "link" },
-              { icon: <UploadFileIcon sx={{ fontSize: { xs: 40, md: 60 } }} color="primary" />, title: "Upload File", type: "file" },
-              { icon: <NotesIcon sx={{ fontSize: { xs: 40, md: 60 } }} color="action" />, title: "Enter Transcript", type: "transcript" }
+              {
+                icon: <YouTubeIcon sx={{ fontSize: { xs: 40, md: 60 } }} />,
+                title: "YouTube Link",
+                type: "link",
+              },
+              {
+                icon: (
+                  <UploadFileIcon
+                    sx={{ fontSize: { xs: 40, md: 60 } }}
+                    color="primary"
+                  />
+                ),
+                title: "Upload File",
+                type: "file",
+              },
+              {
+                icon: (
+                  <NotesIcon
+                    sx={{ fontSize: { xs: 40, md: 60 } }}
+                    color="action"
+                  />
+                ),
+                title: "Enter Transcript",
+                type: "transcript",
+              },
             ].map((item) => (
               <Grid item xs={12} sm={6} md={4} key={item.title}>
                 <Card
@@ -114,7 +163,7 @@ function MeetingSummarizer() {
               variant="contained"
               color="primary"
               sx={{ mt: 2 }}
-              onClick={() => handleSubmission(content)}
+              onClick={() => handleSubmission()}
             >
               Next
             </Button>

@@ -1,23 +1,45 @@
 import React, { useState, useEffect } from "react";
-import '../App.css'
-import { useNavigate } from "react-router-dom";
+import '../App.css';
+import { useNavigate, useLocation } from "react-router-dom";
 import { Container, Typography, Box, Button, CircularProgress } from "@mui/material";
 
 function SummaryPage() {
   const [loading, setLoading] = useState(true);
   const [summary, setSummary] = useState([]);
   const navigate = useNavigate();
+  const location = useLocation(); // useLocation to access the router state
 
   useEffect(() => {
-    // Simulating fetching a summary
-    setTimeout(() => {
-      const fetchedSummary = [
-        "• The summary will be generated a displayed here"
-      ];
-      setSummary(fetchedSummary);
-      setLoading(false);
-    }, 2000);
-  }, []);
+    const fetchSummary = async (videoUrl) => {
+      try {
+        const response = await fetch("http://127.0.0.1:8000/summarize", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ video_url: videoUrl }),
+        });
+        if (response.ok) {
+          const data = await response.json();
+          setSummary(data.summary.split("\n")); // Assuming the summary is a string
+          setLoading(false);
+        } else {
+          console.error("Failed to fetch summary:", response.status);
+          navigate("/MeetingSummarizer"); // Redirect back if fetch fails
+        }
+      } catch (error) {
+        console.error("Error fetching summary:", error);
+        navigate("/MeetingSummarizer"); // Redirect back on error
+      }
+    };
+
+    if (location.state?.videoUrl) {
+      fetchSummary(location.state.videoUrl);
+    } else {
+      console.error("No video URL provided.");
+      navigate("/MeetingSummarizer"); // Redirect back if no URL is provided
+    }
+  }, [location, navigate]);
 
   const handleBackToInput = () => {
     navigate("/MeetingSummarizer");
