@@ -11,7 +11,7 @@ const theme = createTheme({
     },
     background: {
       default: "#fff", // Background color for the app
-      paper: "#f5f5f5", // Background color for components like Card
+      paper: "#ffff", // Background color for components like Card
     },
   },
   typography: {

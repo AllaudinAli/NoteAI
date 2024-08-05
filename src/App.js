@@ -8,6 +8,8 @@ import AboutOne from "./pages/About_one";
 import AboutTwo from "./pages/About_two";
 import AboutThree from "./pages/About_three";
 import AboutFour from "./pages/About_four";
+import Contact from "./pages/Contact";
+import Footer from "./pages/Footer";
 import MeetingSummarizer from "./pages/MeetingSummarizer"; // Make sure to create this component
 import SummaryPage from "./pages/summary";
 import { Box } from "@mui/material";
@@ -28,7 +30,16 @@ function App() {
               </Box>
             }
           />
-          <Route path="/summary" element={<SummaryPage />} />
+          <Route path="/summary" index element={<SummaryPage />} />
+          <Route
+            path="/contact"
+            element={
+              <>
+                <Contact />
+                <Footer />
+              </>
+            }
+          />
           <Route
             index
             element={
@@ -48,12 +59,9 @@ function App() {
                 <Box id="about-us">
                   <AboutFour />
                 </Box>
-                {/* <Box id="methodology">
-                  <Methodology />
-                </Box> */}
-                {/* <Box id="services">
-                  <Services />
-                </Box> */}
+                <Box id="footer">
+                  <Footer />
+                </Box>
               </Box>
             }
           />
