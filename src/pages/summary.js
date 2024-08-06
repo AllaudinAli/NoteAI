@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from "react";
-import '../App.css';
+import "../App.css";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Container, Typography, Box, Button, CircularProgress } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Box,
+  Button,
+  CircularProgress,
+} from "@mui/material";
 
 function SummaryPage() {
   const [loading, setLoading] = useState(true);
   const [summary, setSummary] = useState([]);
+  const [showImage, setShowImage] = useState(false); // State to control the visibility of the image
   const navigate = useNavigate();
   const location = useLocation(); // useLocation to access the router state
 
@@ -45,6 +52,10 @@ function SummaryPage() {
     navigate("/MeetingSummarizer");
   };
 
+  const toggleImage = () => {
+    setShowImage(!showImage); // Toggle the visibility of the flowchart image
+  };
+
   return (
     <Container maxWidth="md" sx={{ p: 4, mt: 10 }}>
       <Typography variant="h4" align="center" gutterBottom>
@@ -59,6 +70,12 @@ function SummaryPage() {
           {summary.map((line, index) => (
             <Typography key={index} variant="body1" paragraph>{line}</Typography>
           ))}
+          <Button variant="contained" color="primary" onClick={toggleImage} sx={{ mt: 2 }}>
+            Show/Hide Flowchart
+          </Button>
+          {showImage && (
+            <img src="./flowchart_summary.jpg" alt="Flowchart" style={{ marginTop: '20px', maxWidth: '100%' }} />
+          )}
         </Box>
       )}
       <Button variant="contained" color="primary" onClick={handleBackToInput} sx={{ mt: 2 }}>
